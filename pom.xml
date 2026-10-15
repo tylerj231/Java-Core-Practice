@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.javacore</groupId>
+    <artifactId>java-core-mastery</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Java Core Mastery</name>
+
+    <properties>
+        <maven.compiler.release>21</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <junit.version>5.13.4</junit.version>
+        <assertj.version>3.27.3</assertj.version>
+    </properties>
+
+    <modules>
+        <module>01-interfaces-abstract-classes/ex01-shapes</module>
+        <module>01-interfaces-abstract-classes/ex02-static-factory</module>
+        <module>01-interfaces-abstract-classes/ex03-abstract-base</module>
+        <module>01-interfaces-abstract-classes/ex04-diamond-conflict</module>
+        <module>01-interfaces-abstract-classes/ex05-template-method</module>
+        <module>01-interfaces-abstract-classes/ex06-private-interface-methods</module>
+        <module>01-interfaces-abstract-classes/ex07-payroll-hierarchy</module>
+        <module>01-interfaces-abstract-classes/ex08-skeletal-implementation</module>
+        <module>01-interfaces-abstract-classes/ex09-payment-plugins</module>
+        <module>02-generics/ex01-box</module>
+        <module>02-generics/ex02-pair</module>
+        <module>02-generics/ex03-bounded-max</module>
+        <module>02-generics/ex04-wildcard-sum</module>
+        <module>02-generics/ex05-pecs-copy</module>
+        <module>02-generics/ex06-comparable-super</module>
+        <module>02-generics/ex07-generic-repository</module>
+        <module>02-generics/ex08-erasure-workarounds</module>
+        <module>02-generics/ex09-typed-map</module>
+        <module>02-generics/ex10-event-bus</module>
+        <module>03-collections/ex01-word-frequency</module>
+        <module>03-collections/ex02-deduplicate</module>
+        <module>03-collections/ex03-choose-the-collection</module>
+        <module>03-collections/ex04-equals-hashcode</module>
+        <module>03-collections/ex05-sorting</module>
+        <module>03-collections/ex06-fail-fast</module>
+        <module>03-collections/ex07-task-scheduler</module>
+        <module>03-collections/ex08-immutable-collections</module>
+        <module>03-collections/ex09-my-hashmap</module>
+        <module>03-collections/ex10-lru-cache</module>
+        <module>03-collections/ex11-ring-buffer</module>
+        <module>04-lambdas-functional-interfaces/ex01-comparators-three-ways</module>
+        <module>04-lambdas-functional-interfaces/ex02-functional-interfaces</module>
+        <module>04-lambdas-functional-interfaces/ex03-method-references</module>
+        <module>04-lambdas-functional-interfaces/ex04-custom-functional-interface</module>
+        <module>04-lambdas-functional-interfaces/ex05-composition</module>
+        <module>04-lambdas-functional-interfaces/ex06-effectively-final</module>
+        <module>04-lambdas-functional-interfaces/ex07-strategy-with-lambdas</module>
+        <module>04-lambdas-functional-interfaces/ex08-checked-exceptions</module>
+        <module>04-lambdas-functional-interfaces/ex09-lazy-and-memoize</module>
+        <module>05-stream-api/shop-model</module>
+        <module>05-stream-api/ex01-basics</module>
+        <module>05-stream-api/ex02-laziness</module>
+        <module>05-stream-api/ex03-primitive-streams</module>
+        <module>05-stream-api/ex04-order-totals</module>
+        <module>05-stream-api/ex05-flatmap</module>
+        <module>05-stream-api/ex06-grouping</module>
+        <module>05-stream-api/ex07-partitioning</module>
+        <module>05-stream-api/ex08-to-map</module>
+        <module>05-stream-api/ex09-nested-grouping</module>
+        <module>05-stream-api/ex10-optional-chains</module>
+        <module>05-stream-api/ex11-top-n-per-group</module>
+        <module>05-stream-api/ex12-custom-collector</module>
+        <module>05-stream-api/ex13-parallel-pitfalls</module>
+        <module>06-capstone-expense-tracker</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>${junit.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- Every exercise module gets JUnit 5 and AssertJ for tests. -->
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.14.0</version>
+                    <configuration>
+                        <compilerArgs>
+                            <arg>-Xlint:all</arg>
+                        </compilerArgs>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.5.3</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
